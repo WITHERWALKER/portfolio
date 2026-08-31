@@ -4,7 +4,6 @@ description: "Plataforma web desarrollada para una empresa dedicada a la comerci
 bgColor: "#eaeaea"
 tags: ["React", "TypeScript", "Supabase"]
 order: 1
-url: "https://maderofresh.com"
 ---
 
 Plataforma web desarrollada para un cliente real, enfocada en establecer su presencia digital y facilitar la gestión de su catálogo de productos. Cuenta con una landing page pública, un dashboard administrativo, gestión de imágenes y un sistema de solicitudes de cotización con notificaciones automáticas.
