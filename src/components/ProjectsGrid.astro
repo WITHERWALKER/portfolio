@@ -1,0 +1,35 @@
+---
+import simpatiaImage from '../assets/img/simpatia-project.webp';
+import maderoImage from '../assets/img/madero-project.webp';
+import hydrogreenImage from '../assets/img/hydrogreen-project.webp'
+
+import SectionTitle from './SectionTitle.astro';
+import ProjectCard from './ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const images: Record<string, string> = {
+  simpatia: simpatiaImage.src,
+  'madero-fresh': maderoImage.src,
+  hydrogreen: hydrogreenImage.src
+};
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="projects" class="py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-4 lg:px-8 xl:px-12">
+    <SectionTitle title="Proyectos" subtitle="Algunos proyectos que he diseñado y desarrollado"/>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          description={project.data.description}
+          tags={project.data.tags}
+          slug={project.id}
+          image={images[project.id] ?? project.data.image}
+          bgColor={project.data.bgColor}
+        />
+      ))}
+    </div>
+  </div>
+</section>

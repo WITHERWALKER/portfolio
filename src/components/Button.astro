@@ -1,0 +1,30 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  href?: string;
+  type?: 'button' | 'submit';
+  download?: boolean;
+}
+
+const { variant = 'primary', href, type = 'button', download } = Astro.props;
+
+const base = 'inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-bg';
+
+const variants = {
+  primary: 'bg-ink text-bg hover:bg-ink/90',
+  secondary: 'bg-transparent text-ink border border-border hover:border-ink/20',
+  ghost: 'bg-transparent text-ink-muted hover:text-ink hover:bg-ink/5',
+};
+
+const classes = `${base} ${variants[variant]}`;
+---
+
+{href ? (
+  <a href={href} class={classes} download={download || undefined} data-astro-reload={download ? '' : undefined}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={classes}>
+    <slot />
+  </button>
+)}

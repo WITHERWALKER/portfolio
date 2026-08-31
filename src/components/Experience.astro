@@ -1,0 +1,53 @@
+---
+import SectionTitle from './SectionTitle.astro';
+
+const experiences = [
+  {
+    role: 'Desarrollador Web',
+    company: 'Madero Fresh',
+    period: '2026',
+    description: 'Desarrollé una plataforma web para una empresa dedicada a la comercialización de productos del campo. Implementé un panel administrativo para gestionar el catálogo de productos y su información. Desarrollé el flujo de solicitudes de cotización con almacenamiento seguro y envío automático de correos. Estructuré la aplicación con una arquitectura escalable para facilitar su mantenimiento y crecimiento.',
+    type: 'Freelancer',
+  },
+  {
+    role: 'Desarrollador Frontend',
+    company: 'REDA — SIMPATIA',
+    period: '2025',
+    description: 'Desarrollé funcionalidades para una plataforma web orientada a la gestión de solicitudes ciudadanas. Implementé módulos para registrar, consultar, actualizar y dar seguimiento a la información del sistema. Integré la interfaz con servicios backend para garantizar el intercambio de datos entre la aplicación y la base de datos. Colaboré en un equipo de desarrollo utilizando control de versiones y participando en pruebas funcionales para asegurar la calidad del sistema.',
+    type: 'Residencias Profesionales',
+  },
+  {
+    role: 'Desarrollador Frontend',
+    company: 'HydroGreen',
+    period: '2024',
+    description: 'Diseñé y desarrollé una aplicación web para el monitoreo de un sistema de hidroponía inteligente. Implementé un panel para visualizar información en tiempo real proveniente de sensores ambientales. Integré la comunicación con la base de datos para consultar y presentar información actualizada del cultivo. Participé en el desarrollo de una solución enfocada en la automatización del monitoreo y el cuidado de plantas.',
+    type: 'Proyecto académico',
+  },
+  {
+    role: 'Soporte Técnico',
+    company: 'Instituto Tecnológico de Torreón — CECOM',
+    period: '2024',
+    description: 'Brindé soporte técnico a usuarios y equipos de cómputo. Realicé mantenimiento preventivo y correctivo. Instalé y actualicé sistemas operativos y software. Diagnosticé y resolví incidencias de hardware y software. Colaboré en la administración y organización del laboratorio de cómputo.',
+    type: 'Servicio Social',
+  },
+];
+---
+
+<section id="experience" class="py-24 md:py-32 border-t border-border">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 xl:px-12">
+    <SectionTitle title="Experiencia" subtitle="Mi trayectoria" />
+    <div class="flex flex-col divide-y divide-border">
+      {experiences.map((exp) => (
+        <div class="py-8 first:pt-0 last:pb-0">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 mb-3">
+            <h3 class="font-display text-2xl font-semibold tracking-tight">{exp.role}</h3>
+            <p class="text-sm tracking-wide uppercase text-ink-muted whitespace-nowrap">{exp.period}</p>
+          </div>
+          <p class="text-ink-muted mb-1">{exp.company}</p>
+          <p class="text-xs tracking-wide uppercase text-ink-muted/60 mb-3">{exp.type}</p>
+          <p class="text-ink-muted leading-relaxed text-sm">{exp.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

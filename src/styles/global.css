@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import "@fontsource-variable/playfair-display";
+@import "@fontsource-variable/manrope";
+
+@theme {
+  --font-display: "Playfair Display Variable", serif;
+  --font-body: "Manrope Variable", sans-serif;
+
+  --color-bg: #f7f4ef;
+  --color-ink: #0f0f0f;
+  --color-ink-muted: #66615a;
+  --color-border: rgba(15, 15, 15, 0.08);
+  --color-surface-dark: #0b0b0b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+}

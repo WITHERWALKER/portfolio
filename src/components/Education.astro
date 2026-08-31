@@ -1,0 +1,37 @@
+---
+import SectionTitle from './SectionTitle.astro';
+
+const education = [
+  {
+    degree: 'Ingeniería Informática',
+    institution: 'Instituto Tecnológico de Torreón',
+    period: '2021 - 2026',
+    specialization: 'Ciencia de datos y aprendizaje automático',
+  },
+  {
+    degree: 'Carrera Técnica en Ofimática',
+    institution: 'CBTa No. 1',
+    period: '2018 - 2021',
+  },
+];
+---
+
+<section id="education" class="py-24 md:py-32 border-t border-border">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 xl:px-12">
+    <SectionTitle title="Educación" subtitle="Mi formación académica" />
+    <div class="flex flex-col divide-y divide-border">
+      {education.map((edu) => (
+        <div class="py-8 first:pt-0 last:pb-0">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 mb-3">
+            <h3 class="font-display text-2xl font-semibold tracking-tight">{edu.degree}</h3>
+            <p class="text-sm tracking-wide uppercase text-ink-muted whitespace-nowrap">{edu.period}</p>
+          </div>
+          <p class="text-ink-muted mb-1">{edu.institution}</p>
+          {edu.specialization && (
+            <p class="text-xs tracking-wide uppercase text-ink-muted/60">{edu.specialization}</p>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,79 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  slug: string;
+  image?: string;
+  bgColor?: string;
+}
+
+const { title, description, tags, slug, image, bgColor } = Astro.props;
+---
+
+<a
+  href={`/projects/${slug}`}
+  class="group block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-3xl"
+>
+  <article class="overflow-hidden rounded-3xl border border-border bg-white transition-all duration-500 hover:border-ink/10 hover:shadow-sm flex h-full flex-col">
+    
+    <div class="p-2 sm:p-2.5">
+      <div
+        class="relative flex aspect-16/11 items-end justify-center overflow-hidden rounded-2xl px-4 pt-6"
+        style={`background-color: ${bgColor ?? '#f0ece6'}`}
+      >
+        <!-- decor: soft grain / vignette -->
+        <div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 1px 1px, #0f0f0f 1px, transparent 0); background-size: 20px 20px;"></div>
+
+        {image ? (
+          <div class="relative w-full overflow-hidden rounded-t-xl sm:rounded-t-[14px] bg-white shadow-[0_10px_40px_-12px_rgba(0,0,0,0.35),0_4px_12px_rgba(0,0,0,0.08)] ring-1 ring-black/6">
+            <!-- browser chrome -->
+            <div class="flex h-7 sm:h-8 items-center gap-1.5 border-b border-black/6 bg-[#fafaf9] px-3">
+              <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57] ring-1 ring-black/10"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-[#ffbd2e] ring-1 ring-black/10"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-[#28c840] ring-1 ring-black/10"></span>
+              <span class="ml-3 hidden sm:block h-4 flex-1 max-w-40 rounded-full bg-black/6"></span>
+            </div>
+            <!-- imagen con ratio fijo: siempre queda bien sin importar tamaño original -->
+            <div class="relative aspect-16/10 overflow-hidden bg-zinc-100">
+              <img
+                src={image}
+                alt={title}
+                loading="lazy"
+                decoding="async"
+                class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-[1.03]"
+                transition:name={`image-${slug}`}
+              />
+            </div>
+          </div>
+        ) : (
+          <div class="relative flex aspect-16/10 w-full items-center justify-center overflow-hidden rounded-t-[14px] bg-white/80 shadow-[0_10px_40px_-12px_rgba(0,0,0,0.2)] ring-1 ring-black/6">
+            <span class="text-sm tracking-wide text-ink-muted">Preview</span>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Contenido -->
+    <div class="flex flex-1 flex-col p-6 sm:p-7">
+      <h3
+        class="font-display text-[22px] font-semibold leading-none tracking-tight sm:text-2xl group-hover:opacity-70 transition-opacity duration-200"
+        transition:name={`title-${slug}`}
+      >
+        {title}
+      </h3>
+
+      <p class="mt-3 line-clamp-2 text-sm leading-relaxed text-ink-muted">
+        {description}
+      </p>
+
+      <div class="mt-5 flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <span class="inline-flex items-center rounded-full bg-ink/6 px-3 py-1 text-xs font-medium tracking-wide text-ink/70 ring-1 ring-inset ring-ink/6">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </article>
+</a>
