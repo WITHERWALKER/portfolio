@@ -1,0 +1,52 @@
+/* Typography for markdown-rendered content (project detail pages).
+   Sizes come from the semantic type scale, not from literals, so the
+   long-form copy tracks the same fluid ramp as the rest of the site. */
+
+.prose h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  line-height: var(--text-title--line-height);
+  letter-spacing: var(--text-title--letter-spacing);
+  font-weight: var(--text-title--font-weight);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+  color: var(--color-ink-muted);
+  margin-bottom: 1.25rem;
+}
+
+.prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose li {
+  font-size: var(--text-body);
+  line-height: var(--text-body--line-height);
+  color: var(--color-ink-muted);
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
