@@ -1,6 +1,7 @@
 ---
-import "../styles/global.css";
-import { ClientRouter } from "astro:transitions";
+import '@/styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import { site, ogImage } from '@/data/site';
 
 interface Props {
   title?: string;
@@ -8,9 +9,29 @@ interface Props {
 }
 
 const {
-  title = "Sergio Vazquez  Zamora — Desarrollo Web & Soporte Técnico",
-  description = "Ingeniero Informático con experiencia en desarrollo web, soporte técnico y creación de soluciones digitales. Disponible para proyectos y oportunidades laborales.",
+  title = `${site.name} — Desarrollo Web & Soporte Técnico`,
+  description = site.metaDescription,
 } = Astro.props;
+
+// Undefined until `site` is set in astro.config.mjs; tags degrade gracefully.
+const canonical = Astro.site && new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = ogImage && Astro.site && new URL(ogImage, Astro.site);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  url: Astro.site?.toString(),
+  jobTitle: 'Desarrollador Web',
+  email: `mailto:${site.email}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Torreón',
+    addressRegion: 'Coahuila',
+    addressCountry: 'MX',
+  },
+  sameAs: [site.github],
+};
 ---
 
 <!doctype html>
@@ -20,9 +41,25 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content={site.themeColor} />
+
+    {canonical && <link rel="canonical" href={canonical.href} />}
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content={site.name} />
+    {canonical && <meta property="og:url" content={canonical.href} />}
+    {ogImageUrl && <meta property="og:image" content={ogImageUrl.href} />}
+
+    <meta name="twitter:card" content={ogImageUrl ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImageUrl && <meta name="twitter:image" content={ogImageUrl.href} />}
+
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <ClientRouter />
   </head>
@@ -30,3 +67,7 @@ const {
     <slot />
   </body>
 </html>
+
+<script>
+  import '@/scripts/ui.ts';
+</script>
