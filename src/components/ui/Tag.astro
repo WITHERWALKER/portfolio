@@ -1,0 +1,20 @@
+---
+interface Props {
+  /** `soft` = filled pill used on cards. `label` = uppercase micro tag. */
+  variant?: 'soft' | 'label';
+  class?: string;
+}
+
+const { variant = 'soft', class: className } = Astro.props;
+
+const base = 'inline-flex items-center rounded-full px-3 py-1 text-xs ring-1 ring-inset';
+
+const variants = {
+  soft: 'bg-ink/6 font-medium text-ink/70 ring-ink/6',
+  label: 'bg-ink/5 tracking-wide uppercase text-ink-muted ring-transparent',
+} as const;
+---
+
+<span class:list={[base, variants[variant], className]}>
+  <slot />
+</span>

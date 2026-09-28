@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  period: string;
+}
+
+const { title, period } = Astro.props;
+---
+
+<div class="py-8 first:pt-0 last:pb-0">
+  <div
+    class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4"
+  >
+    <h3 class="font-display text-heading">{title}</h3>
+    <p class="text-meta text-ink-muted whitespace-nowrap tabular-nums">{period}</p>
+  </div>
+  <slot name="meta" />
+  <slot />
+</div>
