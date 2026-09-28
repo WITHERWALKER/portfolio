@@ -1,0 +1,65 @@
+---
+import Icon from '@/components/ui/Icon.astro';
+import { navLinks, site } from '@/data/site';
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-bg/80 backdrop-blur-md border-b border-border"
+>
+  <nav class="container-page flex items-center justify-between h-16">
+    <a
+      href="/"
+      class="font-display text-xl font-semibold tracking-tight hover:opacity-70 transition-opacity duration-200"
+    >
+      {site.shortName}
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-sm tracking-wide text-ink-muted hover:text-ink transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <button
+      type="button"
+      data-menu-toggle
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="menu-mobile"
+      class="md:hidden p-2 -mr-2 text-ink-muted hover:text-ink transition-colors duration-200"
+    >
+      <Icon name="menu" size={20} data-icon="menu" />
+      <Icon name="close" size={20} data-icon="close" class="hidden" />
+    </button>
+  </nav>
+
+  <div
+    id="menu-mobile"
+    data-menu
+    class="hidden md:hidden border-t border-border bg-bg/95 backdrop-blur-md"
+  >
+    <ul class="container-page py-4 flex flex-col gap-4">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="block text-sm tracking-wide uppercase text-ink-muted hover:text-ink transition-colors duration-200 py-2"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</header>
