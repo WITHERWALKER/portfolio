@@ -1,0 +1,23 @@
+---
+import Section from '@/components/ui/Section.astro';
+import TimelineRow from '@/components/ui/TimelineRow.astro';
+import { experience } from '@/data/experience';
+---
+
+<Section id="experience" title="Experiencia" subtitle="Mi trayectoria profesional">
+  <div class="flex flex-col divide-y divide-border">
+    {
+      experience.map((exp) => (
+        <TimelineRow title={exp.role} period={exp.period}>
+          <p slot="meta" class="mt-1 text-body text-ink-muted">
+            {exp.company}
+          </p>
+          <p class="mt-2 text-label uppercase text-ink-muted/70">{exp.type}</p>
+          <p class="mt-4 text-body text-ink-muted text-pretty max-w-3xl">
+            {exp.description}
+          </p>
+        </TimelineRow>
+      ))
+    }
+  </div>
+</Section>

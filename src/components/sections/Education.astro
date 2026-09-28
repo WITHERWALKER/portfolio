@@ -1,0 +1,24 @@
+---
+import Section from '@/components/ui/Section.astro';
+import TimelineRow from '@/components/ui/TimelineRow.astro';
+import { education } from '@/data/education';
+---
+
+<Section id="education" title="Educación" subtitle="Mi formación académica">
+  <div class="flex flex-col divide-y divide-border">
+    {
+      education.map((edu) => (
+        <TimelineRow title={edu.degree} period={edu.period}>
+          <p slot="meta" class="mt-1 text-body text-ink-muted">
+            {edu.institution}
+          </p>
+          {edu.specialization && (
+            <p class="mt-2 text-small text-ink-muted max-w-2xl text-pretty">
+              {edu.specialization}
+            </p>
+          )}
+        </TimelineRow>
+      ))
+    }
+  </div>
+</Section>

@@ -1,0 +1,52 @@
+---
+import Section from '@/components/ui/Section.astro';
+import Button from '@/components/ui/Button.astro';
+import Icon from '@/components/ui/Icon.astro';
+import { contactLinks, site } from '@/data/site';
+---
+
+<Section id="contact" title="Contacto" subtitle="Hablemos de tu próximo proyecto">
+  <div class="max-w-xl">
+    <p class="text-lede text-ink-muted text-pretty">
+      Estoy abierto a oportunidades de desarrollo web, soporte técnico y proyectos
+      donde pueda seguir creciendo. Si tienes una idea o una vacante, no dudes en
+      escribirme.
+    </p>
+
+    <div class="mt-8 flex flex-col gap-2 max-w-fit">
+      {
+        contactLinks.map((link) => (
+          <div class="flex justify-between items-center gap-6">
+            <a
+              href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
+              class="flex items-center gap-3 text-ink hover:opacity-70 transition-opacity duration-200 text-lede font-medium"
+            >
+              <Icon name={link.icon} size={18} />
+              {link.label}
+            </a>
+
+            <button
+              type="button"
+              data-copy
+              data-copy-value={link.value}
+              aria-label={`Copiar ${link.label}`}
+              class="p-2 text-ink-muted hover:text-ink transition-colors duration-200"
+            >
+              <Icon name="copy" size={16} data-icon="copy" />
+              <Icon name="check" size={16} data-icon="check" class="hidden" />
+            </button>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-10">
+      <Button href={site.cv} variant="secondary" download>
+        <Icon name="download" size={16} class="mr-2" />
+        Descargar CV
+      </Button>
+    </div>
+  </div>
+</Section>
