@@ -1,37 +1,47 @@
 ---
-import SectionTitle from './SectionTitle.astro';
+import SectionTitle from "./SectionTitle.astro";
 
 const education = [
   {
-    degree: 'Ingeniería Informática',
-    institution: 'Instituto Tecnológico de Torreón',
-    period: '2021 - 2026',
-    specialization: 'Ciencia de datos y aprendizaje automático',
+    degree: "Ingeniería Informática",
+    institution: "Instituto Tecnológico de Torreón",
+    period: "2021 – 2026",
+    specialization:
+      "Especialización en Ciencia de Datos y Aprendizaje Automático",
   },
   {
-    degree: 'Carrera Técnica en Ofimática',
-    institution: 'CBTa No. 1',
-    period: '2018 - 2021',
+    degree: "Carrera Técnica en Ofimática",
+    institution: "CBTa No. 1",
+    period: "2018 – 2021",
   },
 ];
 ---
 
-<section id="education" class="py-24 md:py-32 border-t border-border">
+<section
+  id="education"
+  class="py-16 md:py-24 xl:py-32 border-t border-border scroll-mt-20"
+>
   <div class="max-w-7xl mx-auto px-6 lg:px-8 xl:px-12">
     <SectionTitle title="Educación" subtitle="Mi formación académica" />
     <div class="flex flex-col divide-y divide-border">
-      {education.map((edu) => (
-        <div class="py-8 first:pt-0 last:pb-0">
-          <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 mb-3">
-            <h3 class="font-display text-2xl font-semibold tracking-tight">{edu.degree}</h3>
-            <p class="text-sm tracking-wide uppercase text-ink-muted whitespace-nowrap">{edu.period}</p>
+      {
+        education.map((edu) => (
+          <div class="py-8 first:pt-0 last:pb-0">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4">
+              <h3 class="font-display text-heading">{edu.degree}</h3>
+              <p class="text-meta text-ink-muted whitespace-nowrap tabular-nums">
+                {edu.period}
+              </p>
+            </div>
+            <p class="mt-1 text-body text-ink-muted">{edu.institution}</p>
+            {edu.specialization && (
+              <p class="mt-2 text-small text-ink-muted max-w-2xl text-pretty">
+                {edu.specialization}
+              </p>
+            )}
           </div>
-          <p class="text-ink-muted mb-1">{edu.institution}</p>
-          {edu.specialization && (
-            <p class="text-xs tracking-wide uppercase text-ink-muted/60">{edu.specialization}</p>
-          )}
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
