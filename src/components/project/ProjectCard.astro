@@ -37,14 +37,14 @@ const { title, description, tags, slug, image, bgColor } = Astro.props;
         {
           image ? (
             <div class="relative w-full overflow-hidden rounded-t-xl sm:rounded-t-[14px] bg-white shadow-[0_10px_40px_-12px_rgba(0,0,0,0.35),0_4px_12px_rgba(0,0,0,0.08)] ring-1 ring-black/6">
-              <!-- browser chrome -->
+              {/* browser chrome */}
               <div class="flex h-7 sm:h-8 items-center gap-1.5 border-b border-black/6 bg-[#fafaf9] px-3">
                 <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57] ring-1 ring-black/10" />
                 <span class="h-2.5 w-2.5 rounded-full bg-[#ffbd2e] ring-1 ring-black/10" />
                 <span class="h-2.5 w-2.5 rounded-full bg-[#28c840] ring-1 ring-black/10" />
                 <span class="ml-3 hidden sm:block h-4 flex-1 max-w-40 rounded-full bg-black/6" />
               </div>
-              <!-- imagen con ratio fijo: siempre queda bien sin importar tamaño original -->
+              {/* imagen con ratio fijo: siempre queda bien sin importar tamaño original */}
               <div class="relative aspect-16/10 overflow-hidden bg-zinc-100">
                 <Image
                   src={image}
