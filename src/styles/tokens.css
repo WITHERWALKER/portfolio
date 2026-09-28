@@ -1,6 +1,6 @@
 @theme {
-  --font-display: "Playfair Display Variable", serif;
-  --font-body: "Manrope Variable", sans-serif;
+  --font-display: 'Playfair Display Variable', serif;
+  --font-body: 'Manrope Variable', sans-serif;
 
   /* ---------------------------------------------------------------
      Semantic type scale.

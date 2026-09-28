@@ -3,10 +3,12 @@ import Section from '@/components/ui/Section.astro';
 import { skills } from '@/data/skills';
 ---
 
-<Section id="skills" title="Habilidades" subtitle="Tecnologías y áreas con las que trabajo">
-  <div
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"
-  >
+<Section
+  id="skills"
+  title="Habilidades"
+  subtitle="Tecnologías y áreas con las que trabajo"
+>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
     {
       skills.map((group) => (
         <div>
