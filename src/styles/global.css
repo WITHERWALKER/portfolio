@@ -6,6 +6,58 @@
   --font-display: "Playfair Display Variable", serif;
   --font-body: "Manrope Variable", sans-serif;
 
+  /* ---------------------------------------------------------------
+     Semantic type scale.
+     Each role bundles its own fluid size, leading and tracking so a
+     single utility (`text-title`, `text-lede`, ...) is self-sufficient.
+     Sizes use clamp() with em-relative tracking, so tracking and
+     leading scale with the fluid value instead of snapping.
+     Ratio on desktop: 80 / 52 / 24 / 20 / 17 / 15 / 13 / 12
+     --------------------------------------------------------------- */
+
+  /* h1 — hero only */
+  --text-display: clamp(2.375rem, 1.15rem + 5.4vw, 5rem); /* 38 -> 80 */
+  --text-display--line-height: 1.04;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 600;
+
+  /* h2 — section titles */
+  --text-title: clamp(2rem, 1.5rem + 2.2vw, 3.25rem); /* 32 -> 52 */
+  --text-title--line-height: 1.08;
+  --text-title--letter-spacing: -0.02em;
+  --text-title--font-weight: 600;
+
+  /* h3 — item titles (project cards, roles, degrees) */
+  --text-heading: clamp(1.25rem, 1.13rem + 0.55vw, 1.5rem); /* 20 -> 24 */
+  --text-heading--line-height: 1.25;
+  --text-heading--letter-spacing: -0.015em;
+  --text-heading--font-weight: 600;
+
+  /* Intro / standfirst paragraphs */
+  --text-lede: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem); /* 17 -> 20 */
+  --text-lede--line-height: 1.65;
+  --text-lede--letter-spacing: -0.005em;
+
+  /* Main body copy */
+  --text-body: clamp(1rem, 0.98rem + 0.12vw, 1.0625rem); /* 16 -> 17 */
+  --text-body--line-height: 1.7;
+
+  /* Secondary copy (card blurbs) */
+  --text-small: 0.9375rem; /* 15 */
+  --text-small--line-height: 1.6;
+
+  /* Metadata: dates, places, short attributes */
+  --text-meta: 0.8125rem; /* 13 */
+  --text-meta--line-height: 1.5;
+  --text-meta--letter-spacing: 0.01em;
+  --text-meta--font-weight: 500;
+
+  /* Micro labels: eyebrows, category captions, chips context */
+  --text-label: 0.75rem; /* 12 */
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.12em;
+  --text-label--font-weight: 500;
+
   --color-bg: #f7f4ef;
   --color-ink: #0f0f0f;
   --color-ink-muted: #66615a;
