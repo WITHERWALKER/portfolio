@@ -2,11 +2,11 @@
 const year = new Date().getFullYear();
 
 const links = [
-  { href: '/#projects', label: 'Proyectos' },
-  { href: '/#about', label: 'Sobre mi' },
-  { href: '/#experience', label: 'Experiencia' },
-  { href: '/#skills', label: 'Habilidades' },
-  { href: '/#contact', label: 'Contacto' },
+  { href: "/#projects", label: "Proyectos" },
+  { href: "/#about", label: "Sobre mi" },
+  { href: "/#experience", label: "Experiencia" },
+  { href: "/#skills", label: "Habilidades" },
+  { href: "/#contact", label: "Contacto" },
 ];
 ---
 
@@ -18,27 +18,35 @@ const links = [
           Sergio Vazquez Zamora
         </p>
         <p class="mt-3 text-sm text-ink-muted leading-relaxed">
-          Egresado de Ingeniería Informática con experiencia en el desarrollo de aplicaciones web y la creación de soluciones para optimizar procesos y gestionar información.
+          Ingeniero Informático con experiencia en desarrollo web y soporte
+          técnico. Me gusta crear soluciones digitales claras, funcionales y
+          bien pensadas.
         </p>
       </div>
       <div class="flex gap-16">
         <nav>
-          <p class="text-xs tracking-wide uppercase text-ink-muted mb-4">Navegación</p>
+          <p class="text-xs tracking-wide uppercase text-ink-muted mb-4">
+            Navegación
+          </p>
           <ul class="space-y-2">
-            {links.map((link) => (
-              <li>
-                <a
-                  href={link.href}
-                  class="text-sm text-ink hover:text-ink-muted transition-colors duration-200"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {
+              links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-sm text-ink hover:text-ink-muted transition-colors duration-200"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </nav>
         <nav>
-          <p class="text-xs tracking-wide uppercase text-ink-muted mb-4">Contacto</p>
+          <p class="text-xs tracking-wide uppercase text-ink-muted mb-4">
+            Contacto
+          </p>
           <ul class="space-y-2">
             <li>
               <a
@@ -48,7 +56,7 @@ const links = [
                 Email
               </a>
             </li>
-            
+
             <li>
               <a
                 href="https://github.com/WITHERWALKER"
@@ -63,12 +71,11 @@ const links = [
         </nav>
       </div>
     </div>
-    <div class="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div
+      class="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4"
+    >
       <p class="text-xs text-ink-muted">
         &copy; {year} Sergio Vazquez Zamora. Todos los derechos reservados.
-      </p>
-      <p class="text-xs text-ink-muted">
-        Hecho con Astro & &#9829;
       </p>
     </div>
   </div>
