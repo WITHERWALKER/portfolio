@@ -19,7 +19,7 @@ Plataforma web desarrollada para un cliente real, enfocada en establecer su pres
 - Envío automático de notificaciones por correo electrónico.
 - Arquitectura modular preparada para futuras funcionalidades.
 
-## Stack Tecnológico
+## Stack
 
 **Frontend**
 

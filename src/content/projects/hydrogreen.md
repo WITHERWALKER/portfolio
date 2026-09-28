@@ -16,7 +16,7 @@ Proyecto escolar enfocado en el monitoreo de cultivos de fresa mediante sensores
 - Consulta de información actualizada del cultivo.
 - Interfaz responsive para visualizar el estado del cultivo desde diferentes dispositivos.
 
-## Stack Tecnológico
+## Stack
 
 **Frontend**
 

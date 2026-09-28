@@ -19,7 +19,7 @@ Plataforma web desarrollada para instituciones gubernamentales que centraliza la
 - Interfaz responsive para uso interno.
 - Integración de inteligencia artificial para automatizar la atención inicial de solicitudes.
 
-## Stack Tecnológico
+## Stack
 
 **Frontend**
 
