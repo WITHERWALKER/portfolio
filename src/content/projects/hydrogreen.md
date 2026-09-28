@@ -1,6 +1,7 @@
 ---
 title: "HydroGreen"
 description: "Sistema web para monitorear las condiciones de cultivos de fresa mediante sensores y visualización de datos."
+image: ../../assets/images/hydrogreen.webp
 bgColor: "#eaeaea"
 tags: ["Astro", "JavaScript", "Firebase"]
 order: 3

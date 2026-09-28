@@ -4,14 +4,15 @@ import { z } from 'astro/zod';
 
 const projects = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    image: z.string().optional(),
-    bgColor: z.string().optional(),
-    tags: z.array(z.string()),
-    order: z.number(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      image: image().optional(),
+      bgColor: z.string().optional(),
+      tags: z.array(z.string()),
+      order: z.number(),
+    }),
 });
 
 export const collections = { projects };

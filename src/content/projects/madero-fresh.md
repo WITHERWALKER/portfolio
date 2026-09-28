@@ -1,8 +1,9 @@
 ---
-title: "Madero Fresh"
-description: "Plataforma web desarrollada para una empresa dedicada a la comercialización de productos del campo, enfocada en digitalizar su catálogo y facilitar su gestión."
-bgColor: "#eaeaea"
-tags: ["React", "TypeScript", "Supabase"]
+title: 'Madero Fresh'
+description: 'Plataforma web desarrollada para una empresa dedicada a la comercialización de productos del campo, enfocada en digitalizar su catálogo y facilitar su gestión.'
+image: ../../assets/images/madero.webp
+bgColor: '#eaeaea'
+tags: ['React', 'TypeScript', 'Supabase']
 order: 1
 ---
 
@@ -25,29 +26,19 @@ Plataforma web desarrollada para un cliente real, enfocada en establecer su pres
 
 - React
 - TypeScript
-- Tailwind CSS
+- Tailwind
 - React Hook Form
 - Zod
 
 **Backend**
 
-- Supabase Auth
-- Supabase Storage
-- Cloudflare Workers
-
-**Base de datos**
-
-- PostgreSQL
 - Supabase
+- Cloudflare Workers
 
 **Servicios**
 
 - Resend
 - React Email
-
-**Deployment**
-
-- Cloudflare
 
 ## Enlace
 

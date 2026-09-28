@@ -1,0 +1,31 @@
+---
+import Section from '@/components/ui/Section.astro';
+import ProjectCard from './ProjectCard.astro';
+import { getSortedProjects } from '@/lib/projects';
+
+const projects = await getSortedProjects();
+---
+
+<Section
+  id="projects"
+  title="Proyectos"
+  subtitle="Algunos proyectos que he diseñado y desarrollado"
+  bordered={false}
+>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch"
+  >
+    {
+      projects.map((project) => (
+        <ProjectCard
+          title={project.data.title}
+          description={project.data.description}
+          tags={project.data.tags}
+          slug={project.id}
+          image={project.data.image}
+          bgColor={project.data.bgColor}
+        />
+      ))
+    }
+  </div>
+</Section>

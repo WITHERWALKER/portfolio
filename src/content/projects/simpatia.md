@@ -1,10 +1,9 @@
 ---
-title: "SimpatIA"
-description: "Sistema web de gestión ciudadana que facilita la administración, seguimiento y resolución de reportes.
-
-"
-bgColor: "#eaeaea"
-tags: ["React", "ASP.NET", "SQL Server"]
+title: 'SimpatIA'
+description: 'Sistema web de gestión ciudadana que facilita la administración, seguimiento y resolución de reportes.'
+image: ../../assets/images/simpatia.webp
+bgColor: '#eaeaea'
+tags: ['React', 'ASP.NET', 'SQL Server']
 order: 2
 ---
 
@@ -25,7 +24,7 @@ Plataforma web desarrollada para instituciones gubernamentales que centraliza la
 
 - React
 - TypeScript
-- Tailwind CSS
+- Tailwind
 - Angular
 
 **Backend**
