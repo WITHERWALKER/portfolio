@@ -1,0 +1,137 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/layout/Navbar.astro';
+import Footer from '@/components/layout/Footer.astro';
+import Icon from '@/components/ui/Icon.astro';
+import ProjectCard from '@/components/project/ProjectCard.astro';
+import { getSortedLandings } from '@/lib/landings';
+import { site } from '@/data/site';
+
+const landings = await getSortedLandings();
+---
+
+<Layout
+  title={`Mis Landing Pages — ${site.name}`}
+  description="Mis proyectos personales de Landing Pages: las diseño y desarrollo yo, con diseños rápidos, claros y enfocados en conversión."
+>
+  <Navbar />
+  <main class="pt-32 pb-24">
+    <div class="container-page">
+      <a
+        href="/#projects"
+        class="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-ink transition-colors duration-200 mb-12"
+      >
+        <Icon name="arrowLeft" size={16} />
+        Volver al inicio
+      </a>
+
+      <header class="mb-12 lg:mb-16">
+        <p class="text-label uppercase text-ink-muted mb-5 flex items-center gap-2">
+          <Icon name="layout" size={14} />
+          Proyectos personales
+        </p>
+        <div class="flex flex-wrap items-end gap-x-6 gap-y-4">
+          <h1
+            class="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-balance"
+          >
+            Mis Landing Pages
+          </h1>
+          <span
+            class="mb-2 inline-flex items-center rounded-full bg-ink/6 px-3 py-1 text-xs font-medium text-ink/70 ring-1 ring-inset ring-ink/6"
+          >
+            {landings.length}
+            {landings.length === 1 ? ' proyecto' : ' proyectos'}
+          </span>
+        </div>
+        <p class="mt-6 text-xl text-ink-muted max-w-3xl leading-relaxed text-pretty">
+          Landing pages que diseño y programo por mi cuenta: un espacio para explorar
+          ideas, probar estilos y dejar fluir la creatividad.
+        </p>
+      </header>
+
+      {
+        landings.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-stretch">
+            {landings.map((landing) => (
+              <ProjectCard
+                title={landing.data.title}
+                description={landing.data.description}
+                tags={landing.data.tags}
+                slug={landing.id}
+                image={landing.data.image}
+                bgColor={landing.data.bgColor}
+                basePath="landings"
+              />
+            ))}
+          </div>
+        ) : (
+          <div class="rounded-3xl border border-dashed border-ink/15 bg-white/60 p-10 md:p-14 text-center">
+            <div class="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-ink text-bg">
+              <Icon name="layout" size={22} />
+            </div>
+            <h2 class="font-display text-2xl md:text-3xl font-semibold tracking-tight">
+              Muy pronto: mis Landing Pages
+            </h2>
+            <p class="mx-auto mt-4 max-w-xl text-body text-ink-muted">
+              Estoy preparando esta colección. Mientras tanto, puedes ver mis otros
+              proyectos o volver más tarde.
+            </p>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="/#projects"
+                class="inline-flex items-center justify-center gap-2 px-6 py-3 text-small font-medium rounded-lg bg-ink text-bg hover:bg-ink/90 transition-all duration-200"
+              >
+                <Icon name="arrowLeft" size={16} />
+                Ver proyectos
+              </a>
+              <a
+                href="/#contact"
+                class="inline-flex items-center justify-center px-6 py-3 text-small font-medium rounded-lg border border-border hover:border-ink/20 transition-all duration-200"
+              >
+                Pedir una landing
+              </a>
+            </div>
+
+            <details class="mx-auto mt-10 max-w-2xl text-left rounded-2xl border border-border bg-bg p-5">
+              <summary class="cursor-pointer text-sm font-medium">
+                ¿Cómo añado una landing? (solo tú ves esto)
+              </summary>
+              <p class="mt-3 text-sm text-ink-muted">
+                Crea un archivo{' '}
+                <code class="rounded bg-ink/6 px-1.5 py-0.5 text-[13px] text-ink">
+                  src/content/landings/mi-landing.md
+                </code>{' '}
+                con este formato:
+              </p>
+              <pre class="mt-3 overflow-x-auto rounded-xl bg-surface-dark p-4 text-[13px] leading-relaxed text-white/90">
+                <code>{`---
+title: 'Mi Landing'
+description: 'Descripción corta de la landing.'
+tags: ['Astro', 'Tailwind']
+order: 1
+bgColor: '#eaeaea'
+# image: ../../assets/images/mi-landing.webp
+# demo: 'https://mi-landing.com/'
+# category: 'Clínica dental'
+---
+
+## El recorrido
+
+...
+
+## Lo que aprendí
+
+...
+
+## Stack
+
+...`}</code>
+              </pre>
+            </details>
+          </div>
+        )
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>

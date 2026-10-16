@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+import '@/styles/prose.css';
+import Layout from '@/layouts/Layout.astro';
+import Navbar from '@/components/layout/Navbar.astro';
+import Footer from '@/components/layout/Footer.astro';
+import Icon from '@/components/ui/Icon.astro';
+import Tag from '@/components/ui/Tag.astro';
+import { render } from 'astro:content';
+import { getSortedLandings } from '@/lib/landings';
+import { site } from '@/data/site';
+
+export async function getStaticPaths() {
+  const landings = await getSortedLandings();
+  return landings.map((landing) => ({
+    params: { slug: landing.id },
+    props: { landing },
+  }));
+}
+
+const { landing } = Astro.props;
+const { Content } = await render(landing);
+const { image, demo, category = 'General' } = landing.data;
+---
+
+<Layout
+  title={`${landing.data.title} — Landing Pages — ${site.name}`}
+  description={landing.data.description}
+>
+  <Navbar />
+  <main class="pt-32 pb-24">
+    <article class="container-page">
+      <a
+        href="/landings"
+        class="inline-flex items-center gap-2 text-sm text-ink-muted hover:text-ink transition-colors duration-200 mb-12"
+      >
+        <Icon name="arrowLeft" size={16} />
+        Volver a Landing Pages
+      </a>
+
+      <header class="mb-16">
+        <div class="flex flex-wrap gap-2 mb-6">
+          {landing.data.tags.map((tag) => <Tag variant="label">{tag}</Tag>)}
+        </div>
+        <h1
+          class="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight"
+          transition:name={`landing-title-${landing.id}`}
+        >
+          {landing.data.title}
+        </h1>
+        <p class="mt-6 text-xl text-ink-muted max-w-3xl leading-relaxed">
+          {landing.data.description}
+        </p>
+
+        {
+          demo && (
+            <div class="mt-8">
+              <a
+                href={demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-6 py-3 text-small font-medium text-bg transition-all duration-200 hover:bg-ink/90"
+              >
+                Ver demo en vivo
+                <Icon name="arrowUpRight" size={16} />
+              </a>
+            </div>
+          )
+        }
+
+        <dl
+          class="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border"
+        >
+          <div class="bg-bg p-5 sm:p-6">
+            <dt class="flex items-center gap-2 text-label uppercase text-ink-muted">
+              <Icon name="tag" size={13} />
+              Categoría
+            </dt>
+            <dd class="mt-2 font-display text-xl text-ink">{category}</dd>
+          </div>
+          <div class="bg-bg p-5 sm:p-6">
+            <dt class="flex items-center gap-2 text-label uppercase text-ink-muted">
+              <Icon name="globe" size={13} />
+              Estado
+            </dt>
+            <dd class="mt-2 flex items-center gap-2.5 font-display text-xl text-ink">
+              <span class="relative flex size-2">
+                <span
+                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-60"
+                ></span>
+                <span class="relative inline-flex size-2 rounded-full bg-green-500"
+                ></span>
+              </span>
+              En línea
+            </dd>
+          </div>
+        </dl>
+      </header>
+
+      {
+        image && (
+          <div class="aspect-video overflow-hidden rounded-2xl mb-16 bg-ink/5">
+            <Image
+              src={image}
+              alt={landing.data.title}
+              widths={[768, 1280, 1600]}
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              class="h-full w-full object-cover"
+              transition:name={`landing-image-${landing.id}`}
+            />
+          </div>
+        )
+      }
+
+      <div class="prose max-w-none">
+        <Content />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    document
+      .querySelectorAll<HTMLAnchorElement>('.prose a[href^="http"]')
+      .forEach((link) => {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      });
+  });
+</script>

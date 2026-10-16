@@ -10,13 +10,22 @@ interface Props {
   slug: string;
   image?: ImageMetadata;
   bgColor?: string;
+  basePath?: string;
 }
 
-const { title, description, tags, slug, image, bgColor } = Astro.props;
+const {
+  title,
+  description,
+  tags,
+  slug,
+  image,
+  bgColor,
+  basePath = 'projects',
+} = Astro.props;
 ---
 
 <a
-  href={`/projects/${slug}`}
+  href={`/${basePath}/${slug}`}
   class="group block h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-bg rounded-3xl"
 >
   <article
