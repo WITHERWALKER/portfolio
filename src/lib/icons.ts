@@ -10,6 +10,13 @@ export const icons = {
   check: '<path d="M20 6 9 17l-5-5" />',
   pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />',
   arrowLeft: '<path d="m15 18-6-6 6-6" />',
+  arrowRight: '<path d="M5 12h14" /><path d="m12 5 7 7-7 7" />',
+  arrowUpRight: '<path d="M7 7h10v10" /><path d="M7 17 17 7" />',
+  layout:
+    '<rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" />',
+  tag: '<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" /><circle cx="7.5" cy="7.5" r=".5" fill="currentColor" />',
+  globe:
+    '<circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" />',
 } as const;
 
 export type IconName = keyof typeof icons;

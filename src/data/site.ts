@@ -27,6 +27,7 @@ export const ogImage: string = '';
 
 export const navLinks = [
   { href: '/#projects', label: 'Proyectos' },
+  { href: '/landings', label: 'Landing Pages' },
   { href: '/#about', label: 'Sobre mi' },
   { href: '/#experience', label: 'Experiencia' },
   { href: '/#skills', label: 'Habilidades' },
