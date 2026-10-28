@@ -2,13 +2,13 @@ export const site = {
   name: 'Sergio Vazquez Zamora',
   shortName: 'Sergio VZ',
   tagline: 'Diseño interfaces. Desarrollo soluciones.',
-  eyebrow: 'Desarrollo Web · Soporte Técnico',
+  eyebrow: 'Desarrollo Frontend',
   lede: 'Transformo ideas en productos digitales claros y funcionales. Combino desarrollo web, atención al detalle y soporte técnico para crear soluciones que realmente funcionen.',
   summary:
-    'Ingeniero Informático con experiencia en desarrollo web y soporte técnico. Me gusta crear soluciones digitales claras, funcionales y bien pensadas.',
+    'Ingeniero Informático titulado con experiencia en desarrollo frontend y soporte técnico. Me gusta crear soluciones digitales claras, funcionales y bien pensadas.',
   metaDescription:
-    'Ingeniero Informático con experiencia en desarrollo web, soporte técnico y creación de soluciones digitales. Disponible para proyectos y oportunidades laborales.',
-  email: 'sergiovazquezzamora7@gmail.com',
+    'Desarrollador Frontend con experiencia en desarrollo web, soporte técnico y creación de soluciones digitales. Disponible para proyectos y oportunidades laborales.',
+  email: 'witherwalker.dev@gmail.com',
   github: 'https://github.com/WITHERWALKER',
   githubHandle: 'WITHERWALKER',
   location: 'Torreón, Coahuila, México',

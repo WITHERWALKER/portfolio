@@ -7,7 +7,7 @@ export const skills: SkillGroup[] = [
   { category: 'Lenguajes', items: ['JavaScript', 'TypeScript', 'SQL', 'C#'] },
   {
     category: 'Frontend',
-    items: ['React', 'Astro', 'Vite', 'Tailwind', 'HTML', 'CSS'],
+    items: ['React', 'Next.js', 'Astro', 'Vite', 'Tailwind', 'HTML', 'CSS'],
   },
   {
     category: 'Backend',
@@ -17,14 +17,9 @@ export const skills: SkillGroup[] = [
     category: 'Bases de datos',
     items: ['PostgreSQL', 'SQL Server', 'Supabase', 'Firebase', 'MySQL'],
   },
-  { category: 'Herramientas', items: ['Git', 'GitHub', 'Postman', 'Power BI'] },
-  { category: 'Apps Mobile', items: ['React Native', 'Expo'] },
   {
-    category: 'Soporte Técnico',
-    items: [
-      'Diagnóstico de hardware/software',
-      'Mantenimiento preventivo y correctivo',
-      'Instalación de sistemas',
-    ],
+    category: 'Herramientas',
+    items: ['Git', 'GitHub', 'Postman', 'Figma', 'Power BI', 'Microsoft Office'],
   },
+  { category: 'Apps Mobile', items: ['React Native', 'Expo'] },
 ];

@@ -1,7 +1,8 @@
 # Portfolio — Sergio Vazquez Zamora
 
-Hola, soy **Sergio**, Ingeniero Informático especializado en
-desarrollo web y soporte técnico. Este es mi portafolio personal: aquí reúno
+Hola, soy **Sergio**, Ingeniero Informático titulado, especializado en
+desarrollo frontend con experiencia en soporte técnico. Este es mi portafolio
+personal: aquí reúno
 mis proyectos, mi trayectoria, mis habilidades y cómo contactarme, todo en
 una sola página con fichas de detalle para cada proyecto.
 
@@ -13,7 +14,7 @@ una sola página con fichas de detalle para cada proyecto.
 | **Proyectos**   | Una selección de mis trabajos, cada uno con su página de detalle                 |
 | **Sobre mí**    | Mi perfil profesional, ubicación y áreas en las que me enfoco                    |
 | **Experiencia** | Mi trayectoria: rol, empresa, periodo y qué hice en cada etapa                   |
-| **Habilidades** | Lenguajes, frontend, backend, bases de datos, herramientas y soporte técnico     |
+| **Habilidades** | Lenguajes, frontend, backend, bases de datos, herramientas y apps móviles        |
 | **Educación**   | Mi formación académica, con periodos y especialización                           |
 | **Contacto**    | Mi email y GitHub con copiado en un clic, más mi CV en PDF                       |
 

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const {
-  title = `${site.name} — Desarrollo Web & Soporte Técnico`,
+  title = `${site.name} — Desarrollador Frontend`,
   description = site.metaDescription,
 } = Astro.props;
 
@@ -22,7 +22,7 @@ const personSchema = {
   '@type': 'Person',
   name: site.name,
   url: Astro.site?.toString(),
-  jobTitle: 'Desarrollador Web',
+  jobTitle: 'Desarrollador Frontend',
   email: `mailto:${site.email}`,
   address: {
     '@type': 'PostalAddress',
