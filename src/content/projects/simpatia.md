@@ -12,7 +12,7 @@ Plataforma web desarrollada para instituciones gubernamentales que centraliza la
 ## Funcionalidades
 
 - Gestión y seguimiento de tickets ciudadanos.
-- Administración de direcciones y dependencias responsables.
+- Administración de delegaciones y dependencias responsables.
 - Gestión de estados y prioridades de los reportes.
 - Calendario para visualizar actividades y eventos.
 - Interfaz responsive para uso interno.
@@ -25,7 +25,6 @@ Plataforma web desarrollada para instituciones gubernamentales que centraliza la
 - React
 - TypeScript
 - Tailwind
-- Angular
 
 **Backend**
 
@@ -45,7 +44,7 @@ Plataforma web desarrollada para instituciones gubernamentales que centraliza la
 ## Mi contribución
 
 - Desarrollé interfaces y componentes para diferentes módulos del sistema.
-- Implementé la sección de direcciones para administrar áreas responsables y servicios.
+- Implementé la sección de delegaciones para administrar áreas responsables y servicios.
 - Desarrollé la sección de tickets con estados, prioridades y seguimiento de reportes.
 - Implementé la vista de calendario para la gestión de eventos y actividades.
 - Colaboré con el equipo mediante GitHub y Notion para organizar y dar seguimiento al desarrollo.

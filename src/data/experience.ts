@@ -21,15 +21,7 @@ export const experience: Experience[] = [
     period: '2025',
     type: 'Residencias Profesionales',
     description:
-      'Participé en el desarrollo de una plataforma web para la gestión de reportes ciudadanos. Implementé módulos de tickets, direcciones y calendario, integrando la interfaz con servicios backend. Colaboré en equipo usando control de versiones y participé en pruebas funcionales para asegurar la calidad del sistema.',
-  },
-  {
-    role: 'Desarrollador Frontend',
-    company: 'HydroGreen',
-    period: '2024',
-    type: 'Proyecto académico',
-    description:
-      'Diseñé y desarrollé un dashboard web para el monitoreo de un sistema de hidroponía. Implementé la visualización de datos provenientes de sensores y la consulta de información actualizada del cultivo, enfocándome en una interfaz clara y responsive.',
+      'Participé en el desarrollo de una plataforma web para la gestión de reportes ciudadanos. Implementé módulos de delegaciones, tickets y calendario, integrando la interfaz con servicios backend. Colaboré en equipo usando control de versiones y participé en pruebas funcionales para asegurar la calidad del sistema.',
   },
   {
     role: 'Soporte Técnico',

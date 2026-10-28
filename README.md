@@ -25,17 +25,19 @@ una sola página con fichas de detalle para cada proyecto.
   dinámico, panel administrativo y solicitudes de cotización con
   notificaciones automáticas.
 - **SimpatIA** — Plataforma en la que participé para la gestión de reportes
-  ciudadanos: tickets, direcciones, calendario e integración con servicios
+  ciudadanos: tickets, delegaciones, calendario e integración con servicios
   backend.
-- **HydroGreen** — Dashboard web que diseñé y desarrollé para monitorear un
-  sistema de hidroponía, con visualización de datos de sensores.
+- **HydroGreen** — Dashboard web que diseñé y desarrollé para monitorear en
+  tiempo real un cultivo de fresa mediante sensores conectados a Arduino y
+  Firebase, presentado en una exposición escolar. La demo en línea es una
+  prueba de concepto de la interfaz.
 
 Cada proyecto tiene su página con funcionalidades, stack tecnológico y
 enlaces relacionados.
 
 ## Cómo está hecho
 
-Construí este sitio con **Astro 7** y **Tailwind CSS 4** como un sitio 100 %
+Construí este sitio con **Astro 7** y **Tailwind 4** como un sitio 100 %
 estático: las páginas se generan al compilar y se sirven como HTML, sin
 servidor ni base de datos. Uso **TypeScript** en datos y componentes, y las
 imágenes se optimizan automáticamente en el build. No hay framework de UI en
