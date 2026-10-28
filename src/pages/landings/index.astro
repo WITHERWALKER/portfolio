@@ -91,43 +91,6 @@ const landings = await getSortedLandings();
                 Pedir una landing
               </a>
             </div>
-
-            <details class="mx-auto mt-10 max-w-2xl text-left rounded-2xl border border-border bg-bg p-5">
-              <summary class="cursor-pointer text-sm font-medium">
-                ¿Cómo añado una landing? (solo tú ves esto)
-              </summary>
-              <p class="mt-3 text-sm text-ink-muted">
-                Crea un archivo{' '}
-                <code class="rounded bg-ink/6 px-1.5 py-0.5 text-[13px] text-ink">
-                  src/content/landings/mi-landing.md
-                </code>{' '}
-                con este formato:
-              </p>
-              <pre class="mt-3 overflow-x-auto rounded-xl bg-surface-dark p-4 text-[13px] leading-relaxed text-white/90">
-                <code>{`---
-title: 'Mi Landing'
-description: 'Descripción corta de la landing.'
-tags: ['Astro', 'Tailwind']
-order: 1
-bgColor: '#eaeaea'
-# image: ../../assets/images/mi-landing.webp
-# demo: 'https://mi-landing.com/'
-# category: 'Clínica dental'
----
-
-## El recorrido
-
-...
-
-## Lo que aprendí
-
-...
-
-## Stack
-
-...`}</code>
-              </pre>
-            </details>
           </div>
         )
       }
