@@ -15,7 +15,7 @@ export const site = {
   locationShort: 'Torreón, México',
   workMode: 'Remoto',
   availability: 'Actualmente disponible',
-  cv: '/cv-sergiovz.pdf',
+  cv: '/cv_svz.pdf',
   themeColor: '#f7f4ef',
 } as const;
 
