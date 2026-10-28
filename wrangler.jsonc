@@ -1,0 +1,13 @@
+// Cloudflare Workers: el sitio es 100 % estático, así que se despliega como
+// assets estáticos (`astro build` → `dist/`) sin adaptador ni script de Worker.
+// Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-10-28",
+  "assets": {
+    "directory": "./dist",
+    // Sirve dist/404.html (src/pages/404.astro) con estado 404 en rutas inexistentes.
+    "not_found_handling": "404-page",
+  },
+}
