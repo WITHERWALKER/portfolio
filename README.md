@@ -45,6 +45,21 @@ el cliente —el JavaScript se limita a detalles como el menú móvil y los
 botones de copiar—. Todo el contenido vive en este repositorio en archivos
 de datos y Markdown, así que mantenerlo actualizado es editar texto.
 
+## Despliegue en Cloudflare
+
+El sitio se publica en [portfolio.witherwalker-dev.workers.dev](https://portfolio.witherwalker-dev.workers.dev)
+como un Worker de Cloudflare con assets estáticos. La configuración vive en
+`wrangler.jsonc`:
+
+```bash
+pnpm login:wrangler # una sola vez para iniciar sesión en Cloudflare
+pnpm deploy         # compila con Astro y despliega dist/ con Wrangler
+pnpm preview:cf     # compila y sirve el build con el runtime real de Workers
+```
+
+Las rutas inexistentes sirven la página 404 del sitio
+(`not_found_handling: "404-page"` en `wrangler.jsonc`).
+
 ## Contacto
 
 - Email: witherwalker.dev@gmail.com
